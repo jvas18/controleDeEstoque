@@ -1,0 +1,18 @@
+
+body { overflow-x: hidden; }
+
+.m-t-10{
+    margin-top: 10px;
+}
+.m-t-20{
+    margin-top: 20px;
+}
+
+
+.btn-new {
+    color: #fff;
+    background-color: #3e3990;
+    border-color: #3e3990;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

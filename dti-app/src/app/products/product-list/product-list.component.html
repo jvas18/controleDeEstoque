@@ -1,0 +1,51 @@
+<h2>Produtos</h2>
+<div class="m-t-20">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="input-group">
+        <input
+          type="text"
+          [(ngModel)]="name"
+          class="form-control"
+          placeholder="Pesquisar produto por nome..."
+        />
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" (click)="search()"> Pesquisar</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-new m-t-20" [routerLink]="'new'">Novo Produto</button>
+  <table class="table table-bordered m-t-10">
+    <tr>
+      <th></th>
+      <th>Nome</th>
+      <th>Quantidade</th>
+      <th>Preço</th>
+    </tr>
+    <tr *ngFor="let product of products">
+      <td width="10%">
+        <div class="dropdown">
+          <button
+            class="btn btn-default dropdown-toggle"
+            type="button"
+            id="dropdownMenu1"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="true"
+          >
+            Opções
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="option" mat-raised-buttons (click)="remove(product.id)">Excluir</li>
+            <li class="option" [routerLink]="'edit/'+product.id">Editar</li>
+          </ul>
+        </div>
+      </td>
+      <td>{{ product?.name }}</td>
+      <td>{{ product?.qtd }}</td>
+      <td>{{ product?.price | currency:'BRL':true:'1.2-2'}}</td>
+    </tr>
+  </table>
+</div>
